@@ -1,0 +1,8 @@
+
+let arr = ["Holanda","hatos","Chabalala","Eua","Belo Horizonte","India","australia","Hostel"]
+const quantosH = () => {
+    let newArr = arr.filter(temH => temH.includes("H") || temH.includes("h"))
+    return newArr
+}
+
+console.log(quantosH())
