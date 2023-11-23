@@ -1,0 +1,14 @@
+let aprendendoAcontar = (x) => {
+    let arrayQuadratico = []
+    for(let i = 1; i <= x; i++ ){
+        arrayQuadratico.push(i)
+    }
+    console.log(arrayQuadratico)
+    let transformandoEmQuadratico = arrayQuadratico.map(function(element){
+        return element * element
+    })
+    console.log(transformandoEmQuadratico)
+    return transformandoEmQuadratico.reduce((a,b)=> a + b, 0)
+}
+let testando = aprendendoAcontar(3)
+console.log(testando)
