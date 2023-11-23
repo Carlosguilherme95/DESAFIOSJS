@@ -1,0 +1,18 @@
+const viagemEspacial = (arr) => {
+    let newArr = arr.toString()
+    newArr = newArr.split("")
+    //console.log(newArr)
+    
+    let ConvertendoodArr = newArr.map(Number)
+    //console.log(ConvertendoodArr)
+    
+    let ConvertendoPotencia = ConvertendoodArr.map((x) => x * x)
+    //console.log(ConvertendoPotencia)
+    
+    let retornandoResultadoFinal = ConvertendoPotencia.join("")
+    //console.log(retornandoResultadoFinal)
+    return retornandoResultadoFinal
+}
+
+let testando = viagemEspacial([3514])
+console.log(testando)
