@@ -1,0 +1,46 @@
+/* Simulando um Blog com Classes
+Crie uma aplicação javascript que simule um funcionamento básico de blog utilizando classes e associações.
+Você deverá criar uma classe Post e uma classe Comment, onde uma instância de Post poderá receber vários comentários. As instâncias de Post também devem ter um método específico para adição de comentários nelas.
+Você também deverá criar uma classe Author, e os objetos da classe Post também devem possuir um objeto da classe Author, que é o autor do post. Além disso, os objetos da classe Author também devem possuir um array de posts (objetos da classe Post) 
+e um método específico para criação de posts, que deverá criar uma instância utilizando aquele próprio autor, incluir o post no array e então retornar o post criado. */
+
+
+const coment = require ('./coment.js')
+const post = require ('./post.js')
+const autor = require ('./autor.js')
+
+const novoAutor = new autor ("Pablo")
+const novoComentario = new coment("Ganhamos o título")
+const comentarioDOis = novoComentario.addComent("Campeão invicto")
+const newPost = new post (novoAutor ,"Campeão da serie A", comentarioDOis)
+
+console.log(newPost)
+
+class coment {
+    constructor(coment){
+        this.coment = coment
+    }
+    addComent(comentario){
+        const bancoDeComentario = []
+        bancoDeComentario.push(comentario)
+        return comentario
+    }
+}
+
+module.exports = coment
+
+class autor {
+    constructor(autor){ 
+        this.autor = autor
+    }
+}
+module.exports = autor
+
+class post {
+    constructor(autor, post,coment){
+        this.post = post
+        this.coment = coment
+        this.autor = autor
+    }
+}
+module.exports = post
